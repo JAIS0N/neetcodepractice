@@ -1,10 +1,18 @@
-class Solution:
-    def longestConsecutive(self, nums: List[int]) -> int:
+class Solution(object):
+    def longestConsecutive(self, nums):
+        if not nums:
+            return 0
         nums.sort()
-        for i in range(len(nums)):
-            j=i+1
-            if j-1<1:
+        curr = 1
+
+        for i in range(1, len(nums)):
+            if nums[i] == nums[i-1]:
+                # skip duplicates
                 continue
-        return i
+            if nums[i] == nums[i-1] + 1:
+                curr += 1
+
+        return curr
+
 
         
