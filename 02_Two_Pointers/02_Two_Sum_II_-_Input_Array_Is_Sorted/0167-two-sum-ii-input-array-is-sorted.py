@@ -6,8 +6,8 @@ class Solution:
         while left<right:
             k=numbers[left]+numbers[right]
             if target==k:
-                seen.append(numbers[left])
-                seen.append(numbers[right])
+                seen.append(left+1)
+                seen.append(right+1)
                 return seen
             if target<k:
                 right=right-1
