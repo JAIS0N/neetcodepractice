@@ -6,9 +6,7 @@ class Solution:
         while left<right:
             k=numbers[left]+numbers[right]
             if target==k:
-                seen.append(left+1)
-                seen.append(right+1)
-                return seen
+                return [left+1,right+1]
             if target<k:
                 right=right-1
             else:
